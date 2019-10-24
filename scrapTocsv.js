@@ -17,8 +17,7 @@ request('https://www.leapaust.com.au/3dconnexion/', (err, res, html) => {
                 .text();
             const price = $(element)
                 .find('.mpcth-cart-wrap .price .woocommerce-Price-amount.amount')
-                .text()
-                .parseFloat();
+                .text();
 
             const link = $(element)
                 .find('.mpcth-post-title > a')
