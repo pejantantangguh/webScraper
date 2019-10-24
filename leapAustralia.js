@@ -7,6 +7,13 @@ const writeStream = fs.createWriteStream('leapaustralia.csv');
 
 writeStream.write(`Product title,price,link \n`)
 
+/***
+ * My case
+    Every product lives in article class of product type-product == product.type-product
+    Product information lives in div.mpcth-product-wrap > section.mpcth-post-content
+    Inside mpcth-post-content lives product title and pricing
+ **/
+
 request('https://www.leapaust.com.au/3dconnexion/', (err, res, html) => {
     if (!err && res.statusCode == 200) {
         const $ = cheerio.load(html);
@@ -32,12 +39,3 @@ request('https://www.leapaust.com.au/3dconnexion/', (err, res, html) => {
     }
 });
 
-/***
- * My case
-    Every product lives in article class of product type-product == product.type-product
-    Product information lives in div.mpcth-product-wrap > section.mpcth-post-content
-    Inside mpcth-post-content lives product title and pricing
-
-
-
- * */
